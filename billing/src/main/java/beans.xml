@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+       
+ <bean id="product1" class="com.retailstore.billing.Product"> 
+ <property name="pid" value="1"></property> 
+ <property name="pname" value="television"></property> 
+ <property name="quantity" value="5"></property> 
+ <property name="price" value="1200"></property> 
+ <property name="category" value="A"></property>  
+</bean>  
+  
+<bean id="product2" class="com.retailstore.billing.Product"> 
+ <property name="pid" value="2"></property> 
+ <property name="pname" value="cricket-bat"></property> 
+ <property name="quantity" value="15"></property> 
+ <property name="price" value="100"></property> 
+ <property name="category" value="B"></property>   
+
+</bean>  
+
+<bean id="product3" class="com.retailstore.billing.Product"> 
+ <property name="pid" value="3"></property> 
+ <property name="pname" value="eclairs"></property> 
+ <property name="quantity" value="50"></property> 
+ <property name="price" value="1"></property> 
+ <property name="category" value="C"></property>  
+</bean>   
+  
+<bean id="order" class="com.retailstore.billing.Order">  
+<property name="productlist">   
+<list>  
+<ref bean="product1"/>  
+<ref bean="product2"/> 
+<ref bean="product3"/> 
+</list>  
+</property>     
+<property name="customerid" value="12"></property>  
+ 
+</bean> 
+
+<bean id="customer" class="com.retailstore.billing.Customer">  
+</bean> 
+
+  </beans>
